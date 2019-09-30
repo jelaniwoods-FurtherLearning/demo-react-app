@@ -8,6 +8,10 @@ export const ToolHeader = ({ headerText }) => {
     </header>
 }
 
+ToolHeader.defaultProps = {
+  headerText: 'The Tool',
+};
+
 ToolHeader.propTypes = {
   headerText: PropTypes.string,
 };
