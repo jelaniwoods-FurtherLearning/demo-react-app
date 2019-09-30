@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 
 export const HelloWorld = () => {
   // return React.createElement('h1', null, 'Hello WOrld!');
