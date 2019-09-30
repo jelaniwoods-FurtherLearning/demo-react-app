@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-export const CarTool = (props) => {
+export const CarTool = ({ cars: initialCars}) => {
 
   const [ carForm, setCarForm ] = useState({
     make: '',
@@ -10,13 +10,13 @@ export const CarTool = (props) => {
     price: 0,
   });
 
-  const [ cars, setCars ] = useState(props.cars.concat());
+  const [ cars, setCars ] = useState(initialCars.concat());
 
-  const change = (e) => {
+  const change = ({ target: {name, type, value} }) => {
     setCarForm({
       ...carForm,
-      [e.target.name]: e.target.type === 'number'
-      ? Number(e.target.value) : e.target.value,
+      [name]: type === 'number'
+      ? Number(value) : value,
     });
   };
 
