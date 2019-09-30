@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 
+import {ToolHeader} from './ToolHeader'
+
 export const CarTool = ({ cars: initialCars}) => {
 
   const [ carForm, setCarForm ] = useState({
@@ -37,9 +39,7 @@ export const CarTool = ({ cars: initialCars}) => {
 
   return (
   <>
-    <header>
-      <h1> Car Tool</h1>
-    </header>
+    <ToolHeader headerText="Car Tool" />
     <table>
       <thead>
         <tr>
