@@ -3,10 +3,15 @@ import PropTypes from 'prop-types'
 
 import { carsPropType } from './propTypes/cars';
 import {ViewCarRow } from '../components/ViewCarRow'
+import {EditCarRow } from '../components/EditCarRow'
 
 export const CarTable = ({
    cars,
-  onDeleteCar: deleteCar,
+   editCarId,
+   onEditCar: editCar,
+   onSaveCar: saveCar,
+   onCancelCar: cancelCar,
+   onDeleteCar: deleteCar,
  }) => {
 
   return <table>
@@ -23,12 +28,21 @@ export const CarTable = ({
       </thead>
       <tbody>
         { cars.length === 0 && <tr>
-          <td colSpan="6">There are no cars.</td>
+          <td colSpan="7">There are no cars.</td>
         </tr>}
-       {cars.map(car => <ViewCarRow
+       {cars.map(car => car.id === editCarId ?
+       <EditCarRow
         key={car.id}
         car={car}
-        onDeleteCar={deleteCar} />
+        onCancelCar={cancelCar}
+        onSaveCar={saveCar}
+         />
+       : <ViewCarRow
+        key={car.id}
+        car={car}
+        onDeleteCar={deleteCar}
+        onEditCar={editCar}
+         />
        )}
       </tbody>
     </table>
@@ -36,9 +50,14 @@ export const CarTable = ({
 
 CarTable.defaultProps = {
   cars: [],
+  editCarId: -1,
 };
 
 CarTable.propTypes = {
   cars: carsPropType,
+  editCarId: PropTypes.number,
   onDeleteCar: PropTypes.func.isRequired,
+  onEditCar: PropTypes.func.isRequired,
+  onSaveCar: PropTypes.func.isRequired,
+  onCancelCar: PropTypes.func.isRequired,
 };
