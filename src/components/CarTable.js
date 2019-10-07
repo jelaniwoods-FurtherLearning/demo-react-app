@@ -13,11 +13,11 @@ export const CarTable = ({
       <thead>
         <tr>
           <th>Id</th>
-          <th>Make</th>
-          <th>Model</th>
-          <th>Year</th>
-          <th>Color</th>
-          <th>Price</th>
+          <th><label htmlFor="edit-make-input">Make</label></th>
+          <th><label htmlFor="edit-model-input">Model</label></th>
+          <th><label htmlFor="edit-year-input">Year</label></th>
+          <th><label htmlFor="edit-color-input">Color</label></th>
+          <th><label htmlFor="edit-price-input">Price</label></th>
           <th>Actions</th>
         </tr>
       </thead>
