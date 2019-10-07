@@ -24,7 +24,7 @@ export const CarTool = ({ cars: initialCars }) => {
   return (
     <>
       <ToolHeader headerText="Car Tool" />
-      <CarTable cars={cars} />
+      <CarTable cars={cars} onDeleteCar={deleteCar}/>
       <CarForm buttonText="Add Car" onSubmitCar={addCar} />
 
     </>
