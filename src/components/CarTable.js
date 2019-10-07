@@ -12,6 +12,7 @@ export const CarTable = ({ cars }) => {
           <th>Year</th>
           <th>Color</th>
           <th>Price</th>
+          <th>Actions</th>
         </tr>
       </thead>
       <tbody>
@@ -25,6 +26,7 @@ export const CarTable = ({ cars }) => {
          <td>{car.year}</td>
          <td>{car.color}</td>
          <td>{car.price}</td>
+         <td><button type="button" onClick={}>Delete</button></td>
        </tr>)}
       </tbody>
     </table>
