@@ -42,7 +42,7 @@ export const CarTable = ({
         car={car}
         onDeleteCar={deleteCar}
         onEditCar={editCar}
-         />
+         /> // key is only necessary for DYNAMICALLY GENERATED SIBLINGS
        )}
       </tbody>
     </table>

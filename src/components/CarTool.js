@@ -4,9 +4,10 @@ import { ToolHeader } from './ToolHeader'
 import { CarTable } from './CarTable'
 import { CarForm } from './CarForm'
 
+// destructured cars out of props, then aliased the name to initialCars so there would be conflicts
 export const CarTool = ({ cars: initialCars }) => {
 
-
+  // initialCars.concat() creates a shallow copy of the Cars Array 
   const [cars, setCars] = useState(initialCars.concat());
   const [editCarId, setEditCarId] = useState(-1);
 
